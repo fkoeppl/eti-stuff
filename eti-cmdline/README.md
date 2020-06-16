@@ -117,7 +117,7 @@ For use with one of the physical devices, one may set the following parameters
 6. `-C channel`,  for selecting the channel to be set, e.g. 11C, default 11C
    is chosen
 
-7. `-S', for silent processing, normally, while processing the program
+7. `-S, for silent processing, normally, while processing the program
 shows a count on the amount of packages written on stderr.
 
 8. `-N frames`, for stopping after the selected number of DAB frames have 
