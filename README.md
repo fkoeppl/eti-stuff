@@ -1,3 +1,7 @@
+
+Experimental fork of the original repository https://github.com/JvanKatwijk/eti-stuff
+
+
 # eti-stuff
 
 "eti-stuff" is an attempt to understand the eti structure as defined in ETS 300 799.
