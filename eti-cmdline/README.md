@@ -62,16 +62,16 @@ the SDRplay devices RSP 1, RSP II, RSP 1A, and RSP Duo are supported
 by both the 2.13 library and the 3.06 library.
 The RSP-Dx is only supported by the 3.06 library
 
-Use -DSDRPLAY=ON for installing the support software linking to the 2.13 lib
-Use -DSDRPLAY_V3=ON for installing the 3.06 support
+Use `-DSDRPLAY=ON` for installing the support software linking to the 2.13 lib
+Use `-DSDRPLAY_V3=ON` for installing the 3.06 support
 
 If `-DDUMPING=ON` is added, the possibility for dumping the input to an ".sdr" 
 file (note that an sdr-file is a ".wav" file, with a samplerate of 2048000 
 and short int values).
 
-If `-DX64_DEFINED' is added, SSE instructions will be used in the viterbi decoding.
+If `-DX64_DEFINED` is added, SSE instructions will be used in the viterbi decoding.
 
-If `-DRPI_DEFINED' is added and building takes place on an RPI, an attempt
+If `-DRPI_DEFINED` is added and building takes place on an RPI, an attempt
 is made to use neon insrtructions. Note however that there might
 be problems with the toolchain: different toolchains require different
 flags. See the section in the CMakeLists.txt file
