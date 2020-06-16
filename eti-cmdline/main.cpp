@@ -164,6 +164,7 @@ int	main (int argc, char **argv) {
 int16_t		timeSyncTime	= 5;
 int16_t		freqSyncTime	= 10;
 uint8_t		theMode		= 1;
+int32_t		maxFrameCount	= 0;
 int		nrProcessors	= 4;
 std::string	theChannel	= "11C";
 uint8_t		theBand		= BAND_III;
@@ -202,7 +203,7 @@ int16_t		deviceGain	= 50;
 bool		autoGain	= false;
 int16_t		ppmOffset	= 0;
 int		deviceIndex	= 0;
-const char	*optionsString	= "ShP:D:d:M:B:C:O:R:G:Qp:";
+const char	*optionsString	= "ShP:D:d:N:M:B:C:O:R:G:Qp:";
 #elif	HAVE_WAVFILES
 std::string	fileName;
 bool		repeater	= true;
@@ -255,6 +256,11 @@ struct sigaction sigact;
 
 	      case 'd':
 	         timeSyncTime	= atoi (optarg);
+	         break;
+
+	      case 'N':
+	         maxFrameCount	= atoi (optarg);
+		 fprintf (stderr, "Stopping after %i DAB frames.\n", maxFrameCount);
 	         break;
 
 	      case 'O':
@@ -547,7 +553,7 @@ struct sigaction sigact;
 	   cerr << "Handling ensemble " << theName. c_str () <<
 	                    "until you quit" << endl;
 	   run. store (true);
-	   while (run. load ()) {
+	   while ((run. load ()) && ((cnt < maxFrameCount) || (maxFrameCount == 0))) {
 	      if (!isSilent)
 	         fprintf (stderr, "\t\testimated snr: %2d, fibquality %3d\r",
 	                            signalnoise. load (), ficSuccess. load ());
@@ -583,6 +589,7 @@ void    printOptions (void) {
 "   -O filename write output into a file (instead of stdout)\n"
 "   -R filename (if configured) dump to an *.sdr file\n"
 "   -S          be silent during processing\n"
+"   -N          capture N DAB frames and then quit\n"
 "   -h          show options and quit\n"; 
 
 #ifdef	HAVE_WAVFILES
