@@ -141,7 +141,7 @@ You can use dablin or dablin_gtk from https://github.com/Opendigitalradio/dablin
      
 	eti-cmdline-xxx -C 11C -G 80 | dablin_gtk -L
      
-where xxx refers to the input device being supported, one of (`rtlsdr`, `sdrplay`, `airspy`, `hackrf`, `limesdr', `rawfiles`, `wavfiles`).
+where xxx refers to the input device being supported, one of (`rtlsdr`, `sdrplay`, `airspy`, `hackrf`, `limesdr`, `rawfiles`, `wavfiles`).
 
 -----------------------------------------------------------------------------
 ## Copyright
