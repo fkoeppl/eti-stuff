@@ -120,7 +120,7 @@ For use with one of the physical devices, one may set the following parameters
 7. `-S', for silent processing, normally, while processing the program
 shows a count on the amount of packages written on stderr.
 
-8. `-N number of frames`, for stopping after the selected number of DAB frames have 
+8. `-N frames`, for stopping after the selected number of DAB frames have 
 been recorded. 
 
 For device specific settings: run ./eti-cmdline -h
